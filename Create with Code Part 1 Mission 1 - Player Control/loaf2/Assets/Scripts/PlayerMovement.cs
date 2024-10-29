@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-        void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Enemy")){
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
         }
     }
