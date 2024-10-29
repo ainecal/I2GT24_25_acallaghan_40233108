@@ -21,7 +21,6 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         spreadText.text = "Spread Count: " + spreadCount.ToString();
-        lifeCount = 3;
         lifeText.text = "Lives: " + lifeCount.ToString();
     }
 }
