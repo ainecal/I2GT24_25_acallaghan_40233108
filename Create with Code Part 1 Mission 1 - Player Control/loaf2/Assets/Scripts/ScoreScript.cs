@@ -9,8 +9,10 @@ public class ScoreScript : MonoBehaviour
     public int spreadCount;
     public Text spreadText;
 
-    public int lifeCount;
-    
+    public int lifeCount = 3;
+
+    public Text lifeText;
+
     void Start()
     {
     }
@@ -19,5 +21,6 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         spreadText.text = "Spread Count: " + spreadCount.ToString();
+        lifeText.text = "Lives: " + lifeCount.ToString();
     }
 }
