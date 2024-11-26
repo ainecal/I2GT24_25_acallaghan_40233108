@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
 
     public ScoreScript sc;
 
+    // this function loads the Game Over scene
     public void LoadLevel()
     {   
         

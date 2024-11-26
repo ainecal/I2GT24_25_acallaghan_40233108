@@ -7,6 +7,7 @@ public class StartGame : MonoBehaviour
 {
     public string LevelName;
 
+    // this function loads the Start Game scene
     public void LoadLevel()
     {
         SceneManager.LoadScene(LevelName);

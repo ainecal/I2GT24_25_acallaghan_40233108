@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // this function swaps the direction loaf is facing depending on whether he is going right or left
         input = Input.GetAxisRaw("Horizontal");
         if(input < 0){
             spriteRenderer.flipX = true;
@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
         else if (input > 0){
             spriteRenderer.flipX = false;
         }
-
+        // this button is the input for Loaf to jump
         if (Input.GetButton("Jump")){
             playerRb.velocity = Vector2.up * jumpForce;
         }
+        // this function call from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
         if (sc.lifeCount<=0){
             gameover.LoadLevel();
         }
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRb.velocity = new Vector2 (input * speed, playerRb.velocity.y);
     }
-
+    // this function adds 1 to the Spread Count everytime Loaf collides with a spread
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Spread")){
             Destroy(other.gameObject);
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // this function subtracts 1 from the Life Count everytime Loaf collides with an enemy
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
