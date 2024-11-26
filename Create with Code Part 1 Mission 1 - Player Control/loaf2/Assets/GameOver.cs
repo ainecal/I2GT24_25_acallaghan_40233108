@@ -7,8 +7,12 @@ public class GameOver : MonoBehaviour
 {
     public string LevelName;
 
+    public ScoreScript sc;
+
     public void LoadLevel()
-    {
+    {   
+        
         SceneManager.LoadScene(LevelName);
+        
     }
 }

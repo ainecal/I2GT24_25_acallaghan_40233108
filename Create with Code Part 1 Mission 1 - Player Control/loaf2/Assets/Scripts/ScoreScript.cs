@@ -15,6 +15,7 @@ public class ScoreScript : MonoBehaviour
 
     void Start()
     {
+        lifeCount = 3;
     }
 
     // Update is called once per frame

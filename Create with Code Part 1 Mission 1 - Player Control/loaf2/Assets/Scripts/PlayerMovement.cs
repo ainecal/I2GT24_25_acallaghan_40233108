@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float jumpForce;
     public ScoreScript sc;
+    public GameOver gameover;
+    
 
     // Update is called once per frame
     void Update()
     {
+
         input = Input.GetAxisRaw("Horizontal");
         if(input < 0){
             spriteRenderer.flipX = true;
@@ -24,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump")){
             playerRb.velocity = Vector2.up * jumpForce;
+        }
+        if (sc.lifeCount<=0){
+            gameover.LoadLevel();
         }
     }
 
@@ -40,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        sc.lifeCount=3;
         if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
         }
