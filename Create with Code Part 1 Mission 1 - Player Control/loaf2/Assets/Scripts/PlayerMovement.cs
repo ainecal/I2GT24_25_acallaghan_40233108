@@ -52,4 +52,11 @@ public class PlayerMovement : MonoBehaviour
             sc.lifeCount--;
         }
     }
+
+    // this functiongoes to the next level one Loaf gets ot the bread bin
+    void OnCollisionEnter2D(Collision2D collision){
+    if(collision.gameObject.CompareTag("BreadBin")){
+        level2.LoadLevel();
+    }
+}
 }

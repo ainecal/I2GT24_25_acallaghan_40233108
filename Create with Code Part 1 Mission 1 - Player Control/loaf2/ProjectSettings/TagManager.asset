@@ -7,6 +7,7 @@ TagManager:
   - obstacle
   - Spread
   - Enemy
+  - BreadBin
   layers:
   - Default
   - TransparentFX
