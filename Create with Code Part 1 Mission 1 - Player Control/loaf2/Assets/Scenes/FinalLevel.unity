@@ -930,7 +930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelName: GameOver
-  sc: {fileID: 408027679}
 --- !u!114 &408027679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,7 +1315,7 @@ GameObject:
   - component: {fileID: 713894945}
   m_Layer: 0
   m_Name: Bread Bin
-  m_TagString: BreadBin
+  m_TagString: BreadBinFinal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1350,7 +1349,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03607593, y: -0.053745873}
@@ -1472,6 +1471,9 @@ MonoBehaviour:
   jumpForce: 5
   sc: {fileID: 408027679}
   gameover: {fileID: 408027678}
+  leveltwo: {fileID: 0}
+  finallevel: {fileID: 0}
+  gameComplete: {fileID: 0}
 --- !u!70 &751261261
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

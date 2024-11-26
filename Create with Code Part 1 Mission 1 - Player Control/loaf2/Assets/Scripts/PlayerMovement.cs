@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public GameOver gameover;
     public LevelTwo leveltwo;
     public FinalLevel finallevel;
+
+    public GameComplete gameComplete;
     
 
     // Update is called once per frame
@@ -55,12 +57,13 @@ public class PlayerMovement : MonoBehaviour
         
         }
         if(collision.gameObject.CompareTag("BreadBin")){
-            Debug.Log("Loaf has collided with the bread bin");
             leveltwo.LoadLevel();
         }
         if(collision.gameObject.CompareTag("BreadBinL2")){
-            Debug.Log("Loaf has collided with the bread bin");
             finallevel.LoadLevel();
+        }
+        if(collision.gameObject.CompareTag("BreadBinFinal")){
+            gameComplete.LoadLevel();
         }
     }
 }
