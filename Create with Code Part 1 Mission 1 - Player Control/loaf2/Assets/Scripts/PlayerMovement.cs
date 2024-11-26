@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
+        sc.lifeCount=3;
         if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
         }
