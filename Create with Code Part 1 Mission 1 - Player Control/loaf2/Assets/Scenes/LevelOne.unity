@@ -1018,8 +1018,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 12
+  m_AngularDrag: 5
+  m_GravityScale: 16
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1155,6 +1155,10 @@ MonoBehaviour:
   gameover: {fileID: 1769014078}
   leveltwo: {fileID: 1769014079}
   finallevel: {fileID: 0}
+  gameComplete: {fileID: 0}
+  fallingGravityScale: 40
+  jumpAmount: 35
+  gravityScale: 10
 --- !u!1 &489106266
 GameObject:
   m_ObjectHideFlags: 0

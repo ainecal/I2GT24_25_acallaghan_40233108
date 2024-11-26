@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public FinalLevel finallevel;
 
     public GameComplete gameComplete;
+    public float fallingGravityScale = 40;
+    public float jumpAmount = 15;
+    public float gravityScale = 50;
     
 
     // Update is called once per frame
@@ -29,9 +32,24 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = false;
         }
         // this button is the input for Loaf to jump
-        if (Input.GetButton("Jump")){
-            playerRb.velocity = Vector2.up * jumpForce;
+        // if (Input.GetButton("Jump")){
+        //     playerRb.velocity = Vector2.up * jumpForce;
+        // }
+            {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
+
+        if(playerRb.velocity.y >= 0)
+        {
+            playerRb.gravityScale = gravityScale;
+        }
+        else if (playerRb.velocity.y < 0)
+        {
+            playerRb.gravityScale = fallingGravityScale;
+        }
+    }
         // this function calls from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
         if (sc.lifeCount<=0){
             gameover.LoadLevel();
