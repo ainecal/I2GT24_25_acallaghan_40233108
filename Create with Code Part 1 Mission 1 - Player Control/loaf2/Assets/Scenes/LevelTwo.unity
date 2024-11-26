@@ -2357,7 +2357,7 @@ GameObject:
   - component: {fileID: 1448613059}
   m_Layer: 0
   m_Name: Bread Bin
-  m_TagString: BreadBin
+  m_TagString: BreadBinL2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2391,7 +2391,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03607593, y: -0.053745873}
@@ -3115,7 +3115,7 @@ MonoBehaviour:
   sc: {fileID: 563496409}
   gameover: {fileID: 563496408}
   leveltwo: {fileID: 0}
-  finallevel: {fileID: 0}
+  finallevel: {fileID: 563496412}
 --- !u!70 &1946282294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
