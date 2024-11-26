@@ -910,6 +910,7 @@ GameObject:
   - component: {fileID: 408027680}
   - component: {fileID: 408027679}
   - component: {fileID: 408027678}
+  - component: {fileID: 408027681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -961,6 +962,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408027681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408027677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355b535b50cb9ff4896884d625aaaaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: GameCompleteScreen
 --- !u!1 &504074726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,7 +1487,7 @@ MonoBehaviour:
   gameover: {fileID: 408027678}
   leveltwo: {fileID: 0}
   finallevel: {fileID: 0}
-  gameComplete: {fileID: 0}
+  gameComplete: {fileID: 408027681}
 --- !u!70 &751261261
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
