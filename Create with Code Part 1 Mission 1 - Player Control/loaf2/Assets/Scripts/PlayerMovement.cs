@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump")){
             playerRb.velocity = Vector2.up * jumpForce;
         }
-        // this function call from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
+        // this function calls from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
         if (sc.lifeCount<=0){
             gameover.LoadLevel();
         }
@@ -54,14 +54,16 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
-        
         }
+        // this statatement navigates to level 2 when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBin")){
             leveltwo.LoadLevel();
         }
+        // this statatement navigates to the final level when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBinL2")){
             finallevel.LoadLevel();
         }
+        // this statatement shows the Game Complete screen when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBinFinal")){
             gameComplete.LoadLevel();
         }
