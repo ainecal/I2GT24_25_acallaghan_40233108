@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public ScoreScript sc;
     public GameOver gameover;
+    public LevelTwo leveltwo;
+    public FinalLevel finallevel;
     
 
     // Update is called once per frame
@@ -46,17 +48,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // this function subtracts 1 from the Life Count everytime Loaf collides with an enemy
+    // this function is called when Loaf collides with particular Tags
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
             sc.lifeCount--;
+        
+        }
+        if(collision.gameObject.CompareTag("BreadBin")){
+            Debug.Log("Loaf has collided with the bread bin");
+            leveltwo.LoadLevel();
+        }
+        if(collision.gameObject.CompareTag("BreadBinL2")){
+            Debug.Log("Loaf has collided with the bread bin");
+            finallevel.LoadLevel();
         }
     }
-
-    // this functiongoes to the next level one Loaf gets ot the bread bin
-    void OnCollisionEnter2D(Collision2D collision){
-    if(collision.gameObject.CompareTag("BreadBin")){
-        level2.LoadLevel();
-    }
-}
 }

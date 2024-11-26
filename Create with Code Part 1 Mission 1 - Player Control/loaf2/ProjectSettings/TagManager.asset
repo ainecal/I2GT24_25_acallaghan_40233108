@@ -8,6 +8,7 @@ TagManager:
   - Spread
   - Enemy
   - BreadBin
+  - BreadBinL2
   layers:
   - Default
   - TransparentFX

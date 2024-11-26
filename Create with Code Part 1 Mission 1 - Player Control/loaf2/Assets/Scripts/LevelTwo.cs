@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class LevelTwo : MonoBehaviour
 {
     public string LevelName;
 
@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     public void LoadLevel()
     {   
         
-        SceneManager.LoadScene(LevelName);
+        SceneManager.LoadScene("LevelTwo");
         
     }
 }
