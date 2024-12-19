@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpAmount = 15;
     public float gravityScale = 50;
     public AudioSource damageNoise;
+    public AudioSource collect;
     
 
     // Update is called once per frame
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Spread")){
             Destroy(other.gameObject);
+            collect.Play();
             sc.spreadCount++;
         }
     }
