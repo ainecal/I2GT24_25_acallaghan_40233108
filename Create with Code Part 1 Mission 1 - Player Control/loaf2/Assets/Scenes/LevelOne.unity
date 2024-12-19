@@ -1023,8 +1023,8 @@ MonoBehaviour:
   jumpAmount: 35
   gravityScale: 10
   damageNoise: {fileID: 1159204211}
-  buttonClick: {fileID: 0}
   collect: {fileID: 860081082}
+  explosionParticle: {fileID: 2088871590894813759, guid: 298afda7969430f4786f7e88c14fde29, type: 3}
 --- !u!1 &489106266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,7 +3876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88e47f2eae110d45b8217797cfc37c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: LevelTwo
 --- !u!1 &1836938709
 GameObject:
   m_ObjectHideFlags: 0

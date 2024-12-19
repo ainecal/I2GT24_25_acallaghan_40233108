@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravityScale = 50;
     public AudioSource damageNoise;
     public AudioSource collect;
+    public ParticleSystem explosionParticle;
     
 
     // Update is called once per frame
@@ -66,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     // this function is called when Loaf collides with particular Tags
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation); 
             damageNoise.Play();
             sc.lifeCount--;
         }

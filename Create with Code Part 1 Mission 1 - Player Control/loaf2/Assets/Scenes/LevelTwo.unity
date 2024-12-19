@@ -3373,8 +3373,8 @@ MonoBehaviour:
   jumpAmount: 35
   gravityScale: 10
   damageNoise: {fileID: 825928947}
-  buttonClick: {fileID: 0}
   collect: {fileID: 622004126}
+  explosionParticle: {fileID: 2088871590894813759, guid: 298afda7969430f4786f7e88c14fde29, type: 3}
 --- !u!70 &1946282294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
