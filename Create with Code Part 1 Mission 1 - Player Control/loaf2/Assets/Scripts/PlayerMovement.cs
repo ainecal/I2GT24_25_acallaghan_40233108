@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,13 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public ScoreScript sc;
     public GameOver gameover;
-    public LevelTwo leveltwo;
-    public FinalLevel finallevel;
+    // public LevelTwo leveltwo;
+    // public FinalLevel finallevel;
 
-    public GameComplete gameComplete;
+    // public GameComplete gameComplete;
     public float fallingGravityScale = 40;
     public float jumpAmount = 15;
     public float gravityScale = 50;
+
+    public string LevelName;
     
 
     // Update is called once per frame
@@ -75,15 +78,31 @@ public class PlayerMovement : MonoBehaviour
         }
         // this statatement navigates to level 2 when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBin")){
-            leveltwo.LoadLevel();
+            LoadLevelTwo();
         }
         // this statatement navigates to the final level when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBinL2")){
-            finallevel.LoadLevel();
+            LoadFinalLevel();
         }
         // this statatement shows the Game Complete screen when Loaf reaches the bread bin
         if(collision.gameObject.CompareTag("BreadBinFinal")){
-            gameComplete.LoadLevel();
+            LoadGameCompleteScreen();
         }
+    }
+
+    public void LoadLevelTwo(){   
+        
+        SceneManager.LoadScene("LevelTwo");
+        
+    }
+    public void LoadFinalLevel(){   
+        
+        SceneManager.LoadScene("FinalLevel");
+        
+    }
+    public void LoadGameCompleteScreen(){   
+        
+        SceneManager.LoadScene("GameCompleteScreen");
+        
     }
 }
