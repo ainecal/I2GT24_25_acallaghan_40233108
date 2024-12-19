@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float jumpForce;
     public ScoreScript sc;
-    public GameOver gameover;
     public float fallingGravityScale = 40;
     public float jumpAmount = 15;
     public float gravityScale = 50;
@@ -47,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
         // this function calls from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
         if (sc.lifeCount<=0){
-            gameover.LoadLevel();
+            LoadGameOver();
         }
     }
 
@@ -95,6 +94,12 @@ public class PlayerMovement : MonoBehaviour
     public void LoadGameCompleteScreen(){   
         
         SceneManager.LoadScene("GameCompleteScreen");
+        
+    }
+
+    public void LoadGameOver(){   
+        
+        SceneManager.LoadScene("GameOver");
         
     }
 }
