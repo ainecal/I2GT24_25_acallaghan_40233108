@@ -12,10 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public ScoreScript sc;
     public GameOver gameover;
-    // public LevelTwo leveltwo;
-    // public FinalLevel finallevel;
-
-    // public GameComplete gameComplete;
     public float fallingGravityScale = 40;
     public float jumpAmount = 15;
     public float gravityScale = 50;
@@ -34,10 +30,6 @@ public class PlayerMovement : MonoBehaviour
         else if (input > 0){
             spriteRenderer.flipX = false;
         }
-        // this button is the input for Loaf to jump
-        // if (Input.GetButton("Jump")){
-        //     playerRb.velocity = Vector2.up * jumpForce;
-        // }
             {
         if (Input.GetKeyDown(KeyCode.Space))
         {
