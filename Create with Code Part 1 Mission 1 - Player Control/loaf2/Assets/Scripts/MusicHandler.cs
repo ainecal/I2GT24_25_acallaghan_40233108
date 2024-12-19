@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class MusicHandler : MonoBehaviour
 {
-    // this function makes sure that the music applied to every scene
-    void Awake(){
-        DontDestroyOnLoad(this);
-    }
+    private static MusicHandler instance;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject); // Keep the object across scene loads
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate music handler
+        }
+    }
 }
