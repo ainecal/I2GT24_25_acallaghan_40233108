@@ -14,8 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float fallingGravityScale = 40;
     public float jumpAmount = 15;
     public float gravityScale = 50;
-
-    public string LevelName;
+    public AudioSource damageNoise;
     
 
     // Update is called once per frame
@@ -65,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     // this function is called when Loaf collides with particular Tags
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
+            damageNoise.Play();
             sc.lifeCount--;
         }
         // this statatement navigates to level 2 when Loaf reaches the bread bin

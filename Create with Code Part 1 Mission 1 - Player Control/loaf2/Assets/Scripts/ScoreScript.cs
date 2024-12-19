@@ -22,7 +22,7 @@ public class ScoreScript : MonoBehaviour
     // this function updates the UI with the Life Count and Spread Count
     void Update()
     {
-        spreadText.text = "Spread Count: " + spreadCount.ToString();
+        spreadText.text = "Spread Count: " + spreadCount.ToString() + "/7";
         lifeText.text = "Lives: " + lifeCount.ToString();
     }
 }
