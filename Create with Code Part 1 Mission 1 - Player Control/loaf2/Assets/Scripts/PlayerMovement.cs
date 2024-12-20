@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public float groundCheckDistance = 0.2f;
     public LayerMask groundLayer;
+    public float fallThreshold = -10f;
 
 
     // Update is called once per frame
@@ -50,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
         // this function calls from the GameOver file and brings up the Game Over screen if Loaf's life count is 0 or below
         if (sc.lifeCount<=0){
             LoadGameOver();
+        }
+        if (transform.position.y < fallThreshold){
+        // Call the GameOver function to load the Game Over scene
+        LoadGameOver();
         }
     }
 

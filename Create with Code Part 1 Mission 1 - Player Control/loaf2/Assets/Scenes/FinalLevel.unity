@@ -1549,10 +1549,11 @@ MonoBehaviour:
   damageNoise: {fileID: 825928947}
   collect: {fileID: 622004126}
   explosionParticle: {fileID: 2088871590894813759, guid: 298afda7969430f4786f7e88c14fde29, type: 3}
+  playerCollider: {fileID: 751261261}
   groundCheckDistance: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!70 &751261261
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
