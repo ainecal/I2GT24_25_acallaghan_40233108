@@ -17,11 +17,16 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource damageNoise;
     public AudioSource collect;
     public ParticleSystem explosionParticle;
-    
+    public Collider2D playerCollider;
+    private bool isGrounded;
+    public float groundCheckDistance = 0.2f;
+    public LayerMask groundLayer;
+
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+        
+        isGrounded = IsGrounded();
         // this function swaps the direction loaf is facing depending on whether he is going right or left
         input = Input.GetAxisRaw("Horizontal");
         if(input < 0){
@@ -29,19 +34,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (input > 0){
             spriteRenderer.flipX = false;
-        }
-            {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        }{
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded){
             playerRb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
 
-        if(playerRb.velocity.y >= 0)
-        {
+        if(playerRb.velocity.y >= 0){
             playerRb.gravityScale = gravityScale;
         }
-        else if (playerRb.velocity.y < 0)
-        {
+        else if (playerRb.velocity.y < 0){
             playerRb.gravityScale = fallingGravityScale;
         }
     }
@@ -51,8 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         playerRb.velocity = new Vector2 (input * speed, playerRb.velocity.y);
     }
     // this function adds 1 to the Spread Count everytime Loaf collides with a spread
@@ -106,4 +107,11 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene("GameOver");
         
     }
+    private bool IsGrounded(){
+    Vector2 feetPosition = (Vector2)transform.position - new Vector2(0, playerCollider.bounds.extents.y);
+
+    RaycastHit2D hit = Physics2D.Raycast(feetPosition, Vector2.down, groundCheckDistance, groundLayer);
+
+    return hit.collider != null;
+}
 }

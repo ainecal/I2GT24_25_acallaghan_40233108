@@ -1025,6 +1025,11 @@ MonoBehaviour:
   damageNoise: {fileID: 1159204211}
   collect: {fileID: 860081082}
   explosionParticle: {fileID: 2088871590894813759, guid: 298afda7969430f4786f7e88c14fde29, type: 3}
+  playerCollider: {fileID: 420096456}
+  groundCheckDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &489106266
 GameObject:
   m_ObjectHideFlags: 0
