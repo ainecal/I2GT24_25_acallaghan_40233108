@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameCompleteScreen.unity
     guid: 309602d557ce55f47bf912ce3d4c5464
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: a59a4e729418a2a4c8c4c2947c13128b
   m_configObjects: {}
