@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BreadySetGo.sln"
+    "dotnet.defaultSolution": "BreadySetGo.slnx"
 }
